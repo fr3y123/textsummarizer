@@ -1,0 +1,118 @@
+.banner-container {
+    background: url("../images/stacked-waves-haikei-desktop.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.btn-glass-gradient {
+    /* Gradient Base */
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.7) 0%,
+            rgba(29, 78, 216, 0.7) 100%) !important;
+
+    /* Glass Effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    /* Text Styling */
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Transition Effects */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Overlay Effect */
+.btn-glass-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.05) 100%);
+    z-index: 1;
+}
+
+/* Hover Effects */
+.btn-glass-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.8) 0%,
+            rgba(29, 78, 216, 0.8) 100%) !important;
+}
+
+/* Active State */
+.btn-glass-gradient:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: Add subtle particles */
+.btn-glass-gradient::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle,
+            rgba(255, 255, 255, 0.15) 10%,
+            transparent 20%);
+    animation: sparkle 4s linear infinite;
+    z-index: 2;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@media (max-width: 1399.98px) {}
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 991.98px) {
+    .banner-container {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .banner-container {
+        background: url("../images/stacked-waves-haikei-mobile.svg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
